@@ -9,7 +9,7 @@ interface SearchBarProps {
 
 export default function SearchBar({ onSubmit }: SearchBarProps) {
   const handleSearch = async (formData: FormData) => {
-    const query = formData.get('search')?.toString().trim();
+    const query = formData.get('query')?.toString().trim();
     if (!query) {
       toast.error('Please enter a search term.');
       return;
@@ -32,7 +32,7 @@ export default function SearchBar({ onSubmit }: SearchBarProps) {
         <form action={handleSearch} className={css.form}>
           <input
             type="text"
-            name="search"
+            name="query"
             className={css.input}
             placeholder="Search movies..."
             autoComplete="off"
